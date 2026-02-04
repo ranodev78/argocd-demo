@@ -18,7 +18,7 @@ global:
     memory: 128Mi
 
 # Austin instance configuration
-austin:
+weather-app-austin:
   enabled: true
   name: weather-app-austin
   service:
@@ -27,7 +27,7 @@ austin:
   replicaCount: 2
 
 # Boston instance configuration
-boston:
+weather-app-boston:
   enabled: true
   name: weather-app-boston
   service:

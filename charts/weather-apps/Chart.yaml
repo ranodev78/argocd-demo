@@ -12,8 +12,8 @@ dependencies:
   - name: app
     alias: weather-app-austin
     version: 0.0.1
-    repository: "file://../weather-app"
+    repository: "file://../base/weather-app" 
   - name: app
     alias: weather-app-boston
     version: 0.0.1
-    repository: "file://../weather-app"
+    repository: "file://../base/weather-app" 

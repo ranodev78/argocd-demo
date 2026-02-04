@@ -1,0 +1,25 @@
+# Default template values - will be overridden by umbrella chart
+
+enabled: true
+name: "app"
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 8080
+
+image:
+  repository: "ranodev78/weather-app"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+env:
+  city: ""

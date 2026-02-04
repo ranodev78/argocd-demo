@@ -1,6 +1,6 @@
 apiVersion: v2
 name: weather-apps
-description: A Helm chart for deploying the Weather Applications (Austin and Boston)
+description: A Helm umbrella chart for deploying the Weather Applications (Austin and Boston)
 type: application
 version: 0.0.1
 appVersion: "1.0"
@@ -9,9 +9,11 @@ sources:
 maintainers:
   - name: ranodev78
 dependencies:
-  - name: weather-app-austin
+  - name: app
+    alias: weather-app-austin
     version: 0.0.1
     repository: "file://../weather-app"
-  - name: weather-app-boston
+  - name: app
+    alias: weather-app-boston
     version: 0.0.1
     repository: "file://../weather-app"

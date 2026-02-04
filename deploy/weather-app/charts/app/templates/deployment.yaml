@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.global.namespace }}
+  labels:
+    app: {{ .Values.name }}
+    version: {{ .Values.global.image.tag }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+        version: {{ .Values.global.image.tag }}
+    spec:
+      containers:
+        - name: {{ .Values.name }}
+          image: "{{ .Values.global.image.repository }}:{{ .Values.global.image.tag }}"
+          imagePullPolicy: {{ .Values.global.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.targetPort }}
+              protocol: TCP
+          {{- if .Values.global.resourceLimits }}
+          resources:
+            limits:
+              cpu: {{ .Values.global.resourceLimits.cpu }}
+              memory: {{ .Values.global.resourceLimits.memory }}
+            requests:
+              cpu: {{ .Values.global.resourceLimits.cpu }}
+              memory: {{ .Values.global.resourceLimits.memory }}
+          {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: {{ .Values.service.targetPort }}
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: {{ .Values.service.targetPort }}
+            initialDelaySeconds: 20
+            periodSeconds: 5

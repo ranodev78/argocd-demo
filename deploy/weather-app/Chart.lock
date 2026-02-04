@@ -1,0 +1,9 @@
+dependencies:
+- name: weather-app-austin
+  repository: file://../weather-app
+  version: 0.0.1
+- name: weather-app-boston
+  repository: file://../weather-app
+  version: 0.0.1
+digest: sha256:fefac9b80bd2a4e79431e53959511d64146cfcb8cfa309ffd4b1e9f05400dc06
+generated: "2026-02-04T14:59:10.6538824-06:00"

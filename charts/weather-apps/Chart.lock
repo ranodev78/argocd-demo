@@ -1,0 +1,9 @@
+dependencies:
+- name: app
+  repository: file://../base/weather-app
+  version: 0.0.1
+- name: app
+  repository: file://../base/weather-app
+  version: 0.0.1
+digest: sha256:27e45e11e202b26ecc528ef301b75237726da28f2091b92fc348d980b7f4a9f6
+generated: "2026-02-04T16:32:27.7031199-06:00"

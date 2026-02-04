@@ -8,7 +8,11 @@ spec:
   source:
     repoURL: https://github.com/ranodev78/argocd-demo.git
     targetRevision: HEAD
-    path: deploy
+    path: charts/weather-apps              
+    helm:                                   
+      valueFiles:
+        - values.yaml                       
+        - values-dev.yaml                   
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

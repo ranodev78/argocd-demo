@@ -22,4 +22,4 @@ resources:
     memory: 64Mi
 
 env:
-  city: ""
+  location: "Unknown"

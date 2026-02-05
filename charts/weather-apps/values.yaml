@@ -2,7 +2,7 @@ global:
   cluster: kind-argo-dev
   image:
     repository: ghcr.io/ranodev78/weather-app
-    tag: sha-795cc7f
+    tag: sha-40946d9
     pullPolicy: IfNotPresent
   host: localhost
   autoscaler:
@@ -20,6 +20,8 @@ global:
 weather-app-austin:
   enabled: true
   name: weather-app-austin
+  env:
+    location: "Austin, Texas"
   service:
     type: ClusterIP
     port: 8081
@@ -30,6 +32,8 @@ weather-app-austin:
 weather-app-boston:
   enabled: true
   name: weather-app-boston
+  env:
+    location: "Boston, Massachusetts"
   service:
     type: ClusterIP
     port: 8082

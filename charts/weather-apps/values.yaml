@@ -2,7 +2,7 @@ global:
   cluster: kind-argo-dev
   image:
     repository: ghcr.io/ranodev78/weather-app
-    tag: sha-b16b071
+    tag: sha-795cc7f
     pullPolicy: IfNotPresent
   host: localhost
   autoscaler:
@@ -13,8 +13,8 @@ global:
     enabled: false
     minAvailable: 1
   resourceLimits:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 500m
+    memory: 512Mi
 
 # Austin instance configuration
 weather-app-austin:

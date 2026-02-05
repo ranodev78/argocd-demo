@@ -25,7 +25,7 @@ spec:
               protocol: TCP
           env:
             - name: LOCATION
-              value: "{{ .Values.env.location | quote }}"
+              value: {{ .Values.env.location | quote }}
           {{- if .Values.global.resourceLimits }}
           resources:
             limits:

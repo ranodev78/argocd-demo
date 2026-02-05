@@ -1,7 +1,7 @@
 global:
   cluster: kind-argo-dev
   image:
-    repository: ranodev78/weather-app
+    repository: ghcr.io/ranodev78/weather-app
     tag: sha-9751ae8
     pullPolicy: IfNotPresent
   host: localhost

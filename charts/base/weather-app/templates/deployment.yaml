@@ -23,6 +23,9 @@ spec:
           ports:
             - containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
+          env:
+            - name: LOCATION
+              value: "{{ .Values.env.location | quote }}"
           {{- if .Values.global.resourceLimits }}
           resources:
             limits:

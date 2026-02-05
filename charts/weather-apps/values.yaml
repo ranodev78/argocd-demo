@@ -2,7 +2,7 @@ global:
   cluster: kind-argo-dev
   image:
     repository: ghcr.io/ranodev78/weather-app
-    tag: sha-40946d9
+    tag: sha-fc78d6f
     pullPolicy: IfNotPresent
   host: localhost
   autoscaler:
